@@ -1,37 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página Inicial</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
-  <header>
-    <button class="menu-btn">&#9776;</button>
-    <div class="search-bar">
-      <input type="text" placeholder="Categoria / Produto">
-      <button class="search-btn">&#128269;</button>
-    </div>
-  </header>
-  <main>
-    <div class="banner-carrossel">
+  
+  <!-- Tela de Introdução -->
+  <div id="intro-overlay">
+    <img id="image" src="../img/logo.png" alt="ARCA">
+  </div>
+  
+  <main id="main-content">
+    
+    <header class="cabecalho">
+      <button class="menu-btn">&#9776;</button>
       
-    </div>
-    
-     <div class="horizontal-scroll">
-       
-     </div>  
+      <!-- Menu lateral -->
+      <div class="side-menu" id="sideMenu">
+        <button class="close-btn" id="closeMenuBtn">&times;</button>
+        
+        <div class="menu-profile">
+          <div class="avatar"></div>
+          <div>
+            <strong>Nome Do Usuário</strong><br>
+            <span class="email">email@exemplo.com</span>
+          </div>
+        </div>
+        <ul class="menu-list">
+          <li>
+  <a href="inicio.html">
+    <img src="../img/inicio.png" alt="Início">
+    <span>Início</span>
+  </a>
+</li>
+          <li><span>&#128269;</span> Pesquisar Produtos</li>
+          <li><span>&#128717;</span> Mercados Proximos</li>
+          <li><span>&#128200;</span> Comparar Preços</li>
+          <li><span>&#128722;</span> Meu Carrinho</li>
+          <li><span>&#128340;</span> Histórico</li>
+          <li><span>&#9881;</span> Configurações</li>
+          <li><span>&#10067;</span> Ajuda e Suporte</li>
+        </ul>
+        <div class="menu-exit">
+          <span>&#11104;</span> Sair
+        </div>
+      </div>
+      
+      <div class="search-bar">
+        <input type="text" placeholder="Categoria / Produto">
+        <button class="search-btn">&#128269;</button>
+      </div>
+    </header>
+    <main>
+      <div class="banner-carrossel">
+        
+      </div>
+      
+      <div class="horizontal-scroll">
+        
+      </div>
+    </main>
+    <footer>
+      <button class="footer-btn">&#8962;</button>
+      <button class="footer-btn">
+        <img src="../img/home.png" alt="Ícone" class="btn-icon">
+      </button>
+      <div class="cart-btn"><img src="../img/car.png" alt="Ícone" class="btn-icon"style="width: 65px; height: 55px;"></div>
+      <button class="footer-btn">   <img src="../img/notificacao.png" alt="Ícone" class="btn-icon"></button>
+      <button class="footer-btn"><img src="../img/usuario1.png" alt="Ícone" class="btn-icon" style="width: 45px; height: 45px;"></button>
+      
+    </footer>
   </main>
-  <footer>
-    <button class="footer-btn">&#8962;</button>
-    <button class="footer-btn">&#128100;</button>
-    <div class="cart-btn">&#128722;</div>
-    <button class="footer-btn">&#128276;</button>
-    <button class="footer-btn"
-    >&#128100;</button>
-    
-  </footer>
   <script src="../js/script.js"></script>
 </body>
+
 </html>
