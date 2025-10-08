@@ -142,6 +142,7 @@ header {
 .menu-list img {
   width: 28px;
   height: 28px;
+  overflow: hidden;
   object-fit: cover;
   border-radius: 10%;     /* arredonda as imagens */
   margin-right: 16px;     /* espaço entre imagem e texto */
