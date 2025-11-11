@@ -236,6 +236,34 @@ header {
     margin-right: 10px;
   }
 }
+.menu-list {
+  max-height: calc(100vh - 250px); /* ajusta conforme o tamanho do perfil + sair */
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.menu-list::-webkit-scrollbar {
+  width: 6px;
+}
+.menu-list::-webkit-scrollbar-thumb {
+  background-color: #22dbcf;
+  border-radius: 10px;
+}
+
+/* Fixar o perfil e o botão sair */
+.menu-profile {
+  position: sticky;
+  top: 50px; /* abaixo do botão X */
+  background: #5de7e6;
+  z-index: 1;
+}
+
+.menu-exit {
+  position: sticky;
+  bottom: 0;
+  background: #5de7e6;
+  padding: 15px;
+}
 
 .main {
   min-height: 60vh;
@@ -251,7 +279,7 @@ header {
 }
 
 .banner-carrossel img {
-  height: 180px;
+  height: 270px;
   border-radius: 12px;
   scroll-snap-align: center;
 }
