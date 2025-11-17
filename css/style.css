@@ -327,3 +327,23 @@ footer {
     height: 50px;
     display: block;
 }
+.modal-carrinho {
+  position: fixed;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  height: 80vh;
+  background: #fff;
+  border-radius: 25px 25px 0 0;
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+  transition: bottom .3s ease;
+  z-index: 1000;
+}
+
+.modal-carrinho.mostrar {
+  bottom: 0;
+}
+
+.modal-content-carrinho {
+  padding: 20px;
+}

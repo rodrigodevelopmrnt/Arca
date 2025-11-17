@@ -92,9 +92,13 @@
     </button>
   </a>
   
-  <a href="meu_carrinho.html" class="footer-link">
-    <div class="cart-btn"><img src="../img/car.png" alt="Ícone" class="btn-icon" style="width: 65px; height: 55px;"></div>
-  </a>
+
+    <button class="abrir-carrinho" style="background:none; border:none; padding:0;">
+  <div class="cart-btn">
+    <img src="../img/car.png" alt="Carrinho" class="btn-icon" style="width:65px; height:55px;">
+  </div>
+</button>
+
   
   <a href="notificacoes.html" class="footer-link"> <button class="footer-btn"> <img src="../img/notificacao.png" alt="Ícone" class="btn-icon"></button>
   </a>
@@ -103,8 +107,20 @@
   </a>
 </footer>
 
-
   </main>
+  
+  <!-- Modal Carrinho (abaixo da página) -->
+<div id="modal-carrinho" class="modal-carrinho">
+  <div class="modal-content-carrinho">
+    <h2>Meu Carrinho</h2>
+
+    <div class="carrinho-itens"></div>
+
+    <button class="fechar-carrinho">Fechar</button>
+  </div>
+</div>
+
+  
   <script src="../js/script.js"></script>
 </body>
 

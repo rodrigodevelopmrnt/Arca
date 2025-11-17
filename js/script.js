@@ -78,6 +78,12 @@ carrosseis.forEach((banners) => {
     }
   }, 4000);
 });
+// ABRIR MODAL
+document.querySelector(".abrir-carrinho").addEventListener("click", () => {
+  document.getElementById("modal-carrinho").classList.add("mostrar");
+});
 
-  
-  
+// FECHAR MODAL
+document.querySelector(".fechar-carrinho").addEventListener("click", () => {
+  document.getElementById("modal-carrinho").classList.remove("mostrar");
+});
