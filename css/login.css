@@ -1,0 +1,143 @@
+/* GERAL */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    height: 100vh;
+    overflow: hidden; /* impede scroll quando vira a tela */
+}
+
+/* CABEÇALHO FIXO */
+.topo {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 120px;
+
+    background: #39e6c2;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    padding: 1px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 20px;
+}
+
+/* RODAPÉ FIXO */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 80px;
+
+    background: #39e6c2;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+/* ÁREA CENTRAL ENTRE TOPO E RODAPÉ */
+.area-central {
+    position: absolute;
+    top: 70px;       /* altura do topo */
+    bottom: 70px;     /* altura do rodapé */
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    overflow-y: auto; /* se faltar espaço quando virar a tela */
+}
+
+/* CARD LOGIN */
+.card-login {
+    width: 85%;
+    height: flex;
+    background: #39e6c2;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+
+}
+
+label {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+input {
+    width: 95%;
+    padding: 12px;
+    border: none;
+    border-radius: 15px;
+    margin: 8px 0;
+    box-shadow: inset 0 3px 8px rgba(0,0,0,0.15);
+    outline: none;
+}
+
+.cadastro {
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+}
+
+.btn-entrar {
+    width: 90%;
+    background: rgba(0,0,0,0.15);
+    border: none;
+    padding: 12px;
+    border-radius: 15px;
+    margin: 10px 0 20px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.social-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.btn-social {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    justify-content: center;
+}
+
+.facebook {
+    background: #3b5998;
+    color: white;
+}
+
+.google {
+    background: #ffffff;
+    color: black;
+    border: 1px solid #ccc;
+}
+
+.btn-social img {
+    width: 20px;
+}

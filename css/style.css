@@ -295,6 +295,10 @@ footer {
   align-items: center;
   padding: 11px 0;
 }
+  /* Para garantir que os links âncora não adicionem estilos visuais no rodapé */
+.footer-link {
+  text-decoration: none;
+}
 
 .cart-btn {
   background: #fff;
