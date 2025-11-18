@@ -105,18 +105,18 @@ input {
     border: 1px solid #ccc;
     border-radius: 15px;
     margin: 0 0 20px 0; /* Ajusta a margem inferior */
-    box-shadow: none; /* Remove a sombra interna para um visual mais limpo */
+     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     outline: none;
-    background-color: #19d1ac; /* Fundo levemente cinza */
+    background-color: #00D5B2; /* Fundo levemente cinza */
     box-sizing: border-box; /* Inclui padding e borda na largura total */
 }
 
 /* LINK CADASTRO */
 .cadastro {
-    text-align: right; /* Alinha o link de cadastro à direita, padrão em logins */
-    margin: -10px 0 25px 0; /* Ajusta a margem para baixo e move para cima */
+    text-align: start; /* Alinha o link de cadastro à direita, padrão em logins */
+    margin: 10px 0 25px 0; /* Ajusta a margem para baixo e move para cima */
     font-size: 15px;
-    color: #6B8E23; /* Usa a cor do tema para o link */
+    color: #506C71; /* Usa a cor do tema para o link */
     font-weight: bold;
     text-decoration: none;
     display: block;
@@ -125,7 +125,7 @@ input {
 /* BOTÃO ENTRAR */
 .btn-entrar {
     width: 100%;
-    background: #19d1ac; /* Usa a cor primária do tema */
+    background: #00BF9F; /* Usa a cor primária do tema */
     color: black; /* Cor branca para contraste */
     border: none;
     padding: 15px;
@@ -156,26 +156,26 @@ input {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 16px;
+    font-size: 25px;
     font-weight: bold;
     justify-content: center;
     cursor: pointer;
 }
 
 .facebook {
-    background: #19d1ac;
+    background: #00BF9F;
     color: white;
 }
 
 .google {
-    background: #19d1ac;
+    background: #00BF9F;
     color: #ffffff;
     border: 1px solid #ddd;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .btn-social img {
-    width: 20px; /* Ajusta o tamanho do ícone */
-    height: 20px;
+    width: 36px; /* Ajusta o tamanho do ícone */
+    height: 36px;
     object-fit: contain;
 }
