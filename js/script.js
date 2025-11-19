@@ -87,3 +87,14 @@ document.querySelector(".abrir-carrinho").addEventListener("click", () => {
 document.querySelector(".fechar-carrinho").addEventListener("click", () => {
   document.getElementById("modal-carrinho").classList.remove("mostrar");
 });
+// BOTÃO SAIR (sem confirmação)
+const logoutBtn = document.getElementById("logoutBtn");
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", () => {
+    // Remove login se você usa localStorage
+    localStorage.removeItem("usuarioLogado");
+
+    // Vai direto para a página de login
+    window.location.href = "login.html";
+  });
+}

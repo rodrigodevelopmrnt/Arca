@@ -254,16 +254,21 @@ header {
 .menu-profile {
   position: sticky;
   top: 50px; /* abaixo do botão X */
-  background: #5de7e6;
+  background: #00E3BD;
   z-index: 1;
 }
 
 .menu-exit {
   position: sticky;
+  font-size: 1.8em;
   bottom: 0;
-  background: #5de7e6;
+  background: #00E3BD;
   padding: 15px;
-}
+   display: flex;          /* Ativa o Flexbox */
+    align-items: center;    /* Alinha os itens verticalmente ao centro */
+    gap: 10px;              /* Adiciona um pequeno espaço entre a imagem e o texto */
+cursor: pointer; 
+  }
 
 .main {
   min-height: 60vh;
