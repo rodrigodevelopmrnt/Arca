@@ -78,23 +78,44 @@ carrosseis.forEach((banners) => {
     }
   }, 4000);
 });
-// ABRIR MODAL
+
+
+// Abrir modal (clique no botão do rodapé)
 document.querySelector(".abrir-carrinho").addEventListener("click", () => {
   document.getElementById("modal-carrinho").classList.add("mostrar");
+  document.body.style.overflow = "hidden"; // trava scroll
 });
 
-// FECHAR MODAL
-document.querySelector(".fechar-carrinho").addEventListener("click", () => {
-  document.getElementById("modal-carrinho").classList.remove("mostrar");
-});
-// BOTÃO SAIR (sem confirmação)
-const logoutBtn = document.getElementById("logoutBtn");
-if (logoutBtn) {
-  logoutBtn.addEventListener("click", () => {
-    // Remove login se você usa localStorage
-    localStorage.removeItem("usuarioLogado");
+ document.addEventListener("DOMContentLoaded", () => {
 
-    // Vai direto para a página de login
-    window.location.href = "login.html";
-  });
-}
+  const modal = document.getElementById("modal-carrinho");
+  const abrirCarrinho = document.querySelector(".abrir-carrinho");
+  const btnVoltar = document.getElementById("btn-voltar");
+  const btnComparar = document.getElementById("btn-comparar");
+
+  console.log("Modal:", modal);
+  console.log("Abrir:", abrirCarrinho);
+  console.log("Voltar:", btnVoltar);
+  console.log("Comparar:", btnComparar);
+
+  if (abrirCarrinho) {
+    abrirCarrinho.addEventListener("click", () => {
+      modal.classList.add("mostrar");
+      document.body.style.overflow = "hidden";
+    });
+  }
+
+  if (btnVoltar) {
+    btnVoltar.addEventListener("click", () => {
+      modal.classList.remove("mostrar");
+      document.body.style.overflow = "auto";
+    });
+  }
+
+  if (btnComparar) {
+    btnComparar.addEventListener("click", () => {
+      window.location.href = "comparar.html";
+    });
+  }
+
+});
