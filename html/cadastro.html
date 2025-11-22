@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>avaliativa_06_06</title>
+  <link rel="stylesheet" href="../css/login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://unpkg.com/imask"></script>
+</head>
+<body>
+  <header class="header">
+      <div class="topo">
+    <img src="../img/logo.jpeg" class="logo" alt="logo">
+  </div>
+  </header>
+
+  <div class="container">
+    <form action="/action_page.php">
+      <h2>Faça seu Cadastro</h2>
+
+      <!-- Foto de Perfil -->
+      <div class="input-container">
+        <i class="fa fa-camera icon"></i>
+        <input class="input-field" type="file" name="fotoPerfil" accept="image/*">
+      </div>
+
+      <fieldset>
+        <legend>Dados para Login / Segurança</legend>
+
+        <div class="input-container">
+          <i class="fa fa-user icon"></i>
+          <input class="input-field" type="text" placeholder="Nome do Usuário" name="usrnm" required>
+        </div>
+
+        <div class="input-container">
+          <i class="fa fa-envelope icon"></i>
+          <input class="input-field" type="email" name="email" placeholder="Email" required>
+        </div>
+
+        <div class="input-container">
+          <i class="fa fa-envelope icon"></i>
+          <input class="input-field" type="email" name="emailConfirm" placeholder="Confirme seu E-mail" required>
+        </div>
+
+       <div class="input-container">
+  <i class="fa fa-lock icon"></i>
+  <input id="senha" class="input-field" type="password" name="senha" placeholder="Senha" required>
+  <button type="button" onclick="toggleSenha()">👁</button>
+</div>
+
+<div class="input-container">
+  <i class="fa fa-lock icon"></i>
+  <input id="confirmSenha" class="input-field" type="password" name="confirmSenha" placeholder="Confirme a Senha" required>
+  <button type="button" onclick="toggleConfirmSenha()">👁</button>
+</div>
+
+
+        <div class="input-container">
+          <i class="fa fa-question-circle icon"></i>
+          <select class="input-field" name="perguntaSeguranca">
+            <option value="">Escolha uma pergunta de segurança</option>
+            <option value="mae">Nome da mãe</option>
+            <option value="animal">Seu primeiro animal de estimação</option>
+            <option value="cidade">Cidade onde nasceu</option>
+          </select>
+        </div>
+
+        <div class="input-container">
+          <i class="fa fa-edit icon"></i>
+          <input class="input-field" type="text" name="respostaSeguranca" placeholder="Resposta" required>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Informações Pessoais</legend>
+
+        <div class="input-container">
+          <i class="fa fa-id-card icon"></i>
+          <input class="input-field" type="text" placeholder="Nome Completo" name="nm" required>
+        </div>
+
+        <div class="input-container">
+          <i class="fa fa-id-card icon"></i>
+          <input class="input-field" type="text" name="cpf" placeholder="CPF" maxlength="14" required>
+        </div>
+
+        <div class="input-container">
+          <i class="fa fa-id-badge icon"></i>
+          <input class="input-field" type="text" name="rg" placeholder="RG">
+        </div>
+
+        <div class="input-container">
+          <i class="fa fa-calendar icon"></i>
+          <input class="input-field" type="date" name="dataNascimento" required>
+        </div>
+
+        <div class="input-container">
+          <i class="fa fa-phone icon"></i>
+          <input class="input-field" type="tel" name="telefone" placeholder="Telefone" required>
+        </div>
+
+        <div class="input-container" style="flex-direction: column; gap: 5px;">
+          <label><input type="radio" name="sexo" value="masculino" required> Masculino</label>
+          <label><input type="radio" name="sexo" value="feminino"> Feminino</label>
+          <label><input type="radio" name="sexo" value="outro"> Outro</label>
+        </div>
+
+        <div class="input-container">
+          <i class="fa fa-heart icon"></i>
+          <select class="input-field" name="estadoCivil">
+            <option value="">Estado Civil</option>
+            <option value="solteiro">Solteiro(a)</option>
+            <option value="casado">Casado(a)</option>
+            <option value="divorciado">Divorciado(a)</option>
+            <option value="viuvo">Viúvo(a)</option>
+          </select>
+        </div>
+
+        <div class="input-container">
+          <i class="fa fa-briefcase icon"></i>
+          <input class="input-field" type="text" name="profissao" placeholder="Profissão">
+        </div>
+
+        <div class="input-container">
+          <i class="fa fa-flag icon"></i>
+          <input class="input-field" type="text" name="nacionalidade" placeholder="Nacionalidade">
+        </div>
+
+        <div class="input-container">
+          <i class="fa fa-graduation-cap icon"></i>
+          <select class="input-field" name="escolaridade">
+            <option value="">Escolaridade</option>
+            <option value="fundamental">Ensino Fundamental</option>
+            <option value="medio">Ensino Médio</option>
+            <option value="superior">Ensino Superior</option>
+            <option value="pos">Pós-graduação</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Endereço</legend>
+
+        <div class="input-container">
+          <i class="fa fa-map-marker icon"></i>
+          <input class="input-field" type="text" name="endereco" placeholder="Endereço" required>
+        </div>
+
+        <div class="form-grid">
+          <div class="input-container">
+            <i class="fa fa-home icon"></i>
+            <input class="input-field" type="text" name="numero" placeholder="Número" required>
+          </div>
+
+          <div class="input-container">
+            <i class="fa fa-map-pin icon"></i>
+            <input class="input-field" type="text" name="cep" placeholder="CEP" maxlength="9" required>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="input-container">
+            <i class="fa fa-globe icon"></i>
+            <input class="input-field" type="text" name="cidade" placeholder="Cidade" required>
+          </div>
+
+          <div class="input-container">
+            <i class="fa fa-map-marker icon"></i>
+            <input class="input-field" type="text" name="estado" placeholder="Estado" required>
+          </div>
+        </div>
+
+        <div class="input-container">
+          <i class="fa fa-pencil icon"></i>
+          <input class="input-field" type="text" name="complemento" placeholder="Complemento">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Preferências</legend>
+
+        <div>
+          <input id="receberNotificacoes" name="receberNotificacoes" type="checkbox">
+          <label for="receberNotificacoes">Desejo receber notificações e promoções.</label>
+        </div>
+
+        <div>
+          <input id="aceiteTermos" name="aceiteTermos" type="checkbox" required>
+          <label for="aceiteTermos">Li e aceito os termos de uso e política de privacidade.</label>
+        </div>
+      </fieldset>
+
+      <div>
+        <button type="submit">Finalizar Cadastro</button>
+        <button type="reset">Limpar</button>
+      </div>
+    </form>
+  </div>
+
+  <footer class="rodape">
+   
+  </footer>
+
+  <script src="../js/cadastro.js"></script>
+  <script>
+    function toggleSenha() {
+  const campoSenha = document.getElementById('senha');
+  campoSenha.type = campoSenha.type === 'password' ? 'text' : 'password';
+}
+
+function toggleConfirmSenha() {
+  const campoConfirm = document.getElementById('confirmSenha');
+  campoConfirm.type = campoConfirm.type === 'password' ? 'text' : 'password';
+}
+
+  </script>
+</body>
+</html>
