@@ -1,221 +1,177 @@
+
 <!doctype html>
 <html lang="pt-br">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>avaliativa_06_06</title>
-  <link rel="stylesheet" href="../css/login.css">
-  <!--icones-->
+  <title>ARCA - Cadastro</title>
+  <link rel="stylesheet" href="../css/cadastro.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!--mascara para os dados -->
   <script src="https://unpkg.com/imask"></script>
 </head>
 <body>
   <header class="header">
-      <div class="topo">
-    <img src="../img/logo.jpeg" class="logo" alt="logo">
-  </div>
+    <div class="topo">
+      <img src="../img/logo.png" class="logo" alt="ARCA Logo">
+      <h1>Compare preços e economize!</h1>
+    </div>
   </header>
 
   <div class="container">
-    <form action="/action_page.php">
-      <h2>Faça seu Cadastro</h2>
-
-      <!-- Foto de Perfil -->
-      <div class="input-container">
-        <i class="fa fa-camera icon"></i>
-        <input class="input-field" type="file" name="fotoPerfil" accept="image/*">
-      </div>
+    <form action="processa_cadastro.php" method="POST" enctype="multipart/form-data">
+      <h2>Criar Conta no ARCA</h2>
 
       <fieldset>
-        <legend>Dados para Login / Segurança</legend>
+        <legend>Dados Básicos (Obrigatório)</legend>
 
         <div class="input-container">
           <i class="fa fa-user icon"></i>
-          <input class="input-field" type="text" placeholder="Nome do Usuário" name="usrnm" required>
+          <input class="input-field" type="text" placeholder="Nome Completo" 
+                 name="nome" minlength="3" maxlength="100" required>
         </div>
 
         <div class="input-container">
           <i class="fa fa-envelope icon"></i>
-          <input class="input-field" type="email" name="email" placeholder="Email" required>
+          <input class="input-field" type="email" name="email" 
+                 placeholder="Seu melhor e-mail" required>
         </div>
 
         <div class="input-container">
-          <i class="fa fa-envelope icon"></i>
-          <input class="input-field" type="email" name="emailConfirm" placeholder="Confirme seu E-mail" required>
-        </div>
-
-       <div class="input-container">
-  <i class="fa fa-lock icon"></i>
-  <input id="senha" class="input-field" type="password" name="senha" placeholder="Senha" required>
-  <button type="button" onclick="toggleSenha()">👁</button>
-</div>
-
-<div class="input-container">
-  <i class="fa fa-lock icon"></i>
-  <input id="confirmSenha" class="input-field" type="password" name="confirmSenha" placeholder="Confirme a Senha" required>
-  <button type="button" onclick="toggleConfirmSenha()">👁</button>
-</div>
-
-
-        <div class="input-container">
-          <i class="fa fa-question-circle icon"></i>
-          <select class="input-field" name="perguntaSeguranca">
-            <option value="">Escolha uma pergunta de segurança</option>
-            <option value="mae">Nome da mãe</option>
-            <option value="animal">Seu primeiro animal de estimação</option>
-            <option value="cidade">Cidade onde nasceu</option>
-          </select>
+          <i class="fa fa-lock icon"></i>
+          <input id="senha" class="input-field" type="password" name="senha" 
+                 placeholder="Senha (mínimo 8 caracteres)" 
+                 minlength="8" required>
+          <button type="button" onclick="toggleSenha()">👁</button>
         </div>
 
         <div class="input-container">
-          <i class="fa fa-edit icon"></i>
-          <input class="input-field" type="text" name="respostaSeguranca" placeholder="Resposta" required>
+          <i class="fa fa-lock icon"></i>
+          <input id="confirmSenha" class="input-field" type="password" 
+                 name="confirmSenha" placeholder="Confirme a Senha" required>
+          <button type="button" onclick="toggleConfirmSenha()">👁</button>
         </div>
       </fieldset>
 
       <fieldset>
-        <legend>Informações Pessoais</legend>
+        <legend>Informações Adicionais (Opcional)</legend>
 
         <div class="input-container">
           <i class="fa fa-id-card icon"></i>
-          <input class="input-field" type="text" placeholder="Nome Completo" name="nm" required>
-        </div>
-
-        <div class="input-container">
-          <i class="fa fa-id-card icon"></i>
-          <input class="input-field" type="text" name="cpf" placeholder="CPF" maxlength="14" required>
-        </div>
-
-        <div class="input-container">
-          <i class="fa fa-id-badge icon"></i>
-          <input class="input-field" type="text" name="rg" placeholder="RG">
-        </div>
-
-        <div class="input-container">
-          <i class="fa fa-calendar icon"></i>
-          <input class="input-field" type="date" name="dataNascimento" required>
+          <input class="input-field" type="text" name="cpf" 
+                 placeholder="CPF (opcional)" maxlength="14">
         </div>
 
         <div class="input-container">
           <i class="fa fa-phone icon"></i>
-          <input class="input-field" type="tel" name="telefone" placeholder="Telefone" required>
+          <input class="input-field" type="tel" name="telefone" 
+                 placeholder="Telefone (opcional)" maxlength="15">
         </div>
-
-        <div class="input-container" style="flex-direction: column; gap: 5px;">
-          <label><input type="radio" name="sexo" value="masculino" required> Masculino</label>
-          <label><input type="radio" name="sexo" value="feminino"> Feminino</label>
-          <label><input type="radio" name="sexo" value="outro"> Outro</label>
-        </div>
-
-        <div class="input-container">
-          <i class="fa fa-heart icon"></i>
-          <select class="input-field" name="estadoCivil">
-            <option value="">Estado Civil</option>
-            <option value="solteiro">Solteiro(a)</option>
-            <option value="casado">Casado(a)</option>
-            <option value="divorciado">Divorciado(a)</option>
-            <option value="viuvo">Viúvo(a)</option>
-          </select>
-        </div>
-
-        <div class="input-container">
-          <i class="fa fa-briefcase icon"></i>
-          <input class="input-field" type="text" name="profissao" placeholder="Profissão">
-        </div>
-
-        <div class="input-container">
-          <i class="fa fa-flag icon"></i>
-          <input class="input-field" type="text" name="nacionalidade" placeholder="Nacionalidade">
-        </div>
-
-        <div class="input-container">
-          <i class="fa fa-graduation-cap icon"></i>
-          <select class="input-field" name="escolaridade">
-            <option value="">Escolaridade</option>
-            <option value="fundamental">Ensino Fundamental</option>
-            <option value="medio">Ensino Médio</option>
-            <option value="superior">Ensino Superior</option>
-            <option value="pos">Pós-graduação</option>
-          </select>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>Endereço</legend>
 
         <div class="input-container">
           <i class="fa fa-map-marker icon"></i>
-          <input class="input-field" type="text" name="endereco" placeholder="Endereço" required>
-        </div>
-
-        <div class="form-grid">
-          <div class="input-container">
-            <i class="fa fa-home icon"></i>
-            <input class="input-field" type="text" name="numero" placeholder="Número" required>
-          </div>
-
-          <div class="input-container">
-            <i class="fa fa-map-pin icon"></i>
-            <input class="input-field" type="text" name="cep" placeholder="CEP" maxlength="9" required>
-          </div>
-        </div>
-
-        <div class="form-grid">
-          <div class="input-container">
-            <i class="fa fa-globe icon"></i>
-            <input class="input-field" type="text" name="cidade" placeholder="Cidade" required>
-          </div>
-
-          <div class="input-container">
-            <i class="fa fa-map-marker icon"></i>
-            <input class="input-field" type="text" name="estado" placeholder="Estado" required>
-          </div>
+          <input class="input-field" type="text" name="cidade" 
+                 placeholder="Cidade" value="Mogi Mirim" readonly>
+          <small>Atualmente disponível apenas em Mogi Mirim</small>
         </div>
 
         <div class="input-container">
-          <i class="fa fa-pencil icon"></i>
-          <input class="input-field" type="text" name="complemento" placeholder="Complemento">
+          <i class="fa fa-camera icon"></i>
+          <label for="fotoPerfil">Foto de Perfil (opcional)</label>
+          <input class="input-field" type="file" id="fotoPerfil" 
+                 name="fotoPerfil" accept="image/*">
         </div>
       </fieldset>
 
       <fieldset>
         <legend>Preferências</legend>
 
-        <div>
-          <input id="receberNotificacoes" name="receberNotificacoes" type="checkbox">
-          <label for="receberNotificacoes">Desejo receber notificações e promoções.</label>
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" name="notificacao_push" value="1" checked>
+            <i class="fa fa-bell"></i> Receber notificações push
+          </label>
         </div>
 
-        <div>
-          <input id="aceiteTermos" name="aceiteTermos" type="checkbox" required>
-          <label for="aceiteTermos">Li e aceito os termos de uso e política de privacidade.</label>
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" name="notificacao_email" value="1" checked>
+            <i class="fa fa-envelope"></i> Receber ofertas por e-mail
+          </label>
+        </div>
+
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" name="notificacao_promocoes" value="1" checked>
+            <i class="fa fa-tag"></i> Receber alertas de promoções
+          </label>
+        </div>
+
+        <div class="input-container">
+          <i class="fa fa-map icon"></i>
+          <label for="raio_busca">Raio de busca (km):</label>
+          <input type="range" id="raio_busca" name="raio_busca" 
+                 min="5" max="30" value="15" 
+                 oninput="this.nextElementSibling.value = this.value">
+          <output>15</output>
+        </div>
+
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" name="modo_escuro" value="1">
+            <i class="fa fa-moon-o"></i> Modo escuro
+          </label>
         </div>
       </fieldset>
 
-      <div>
-        <button type="submit">Finalizar Cadastro</button>
-        <button type="reset">Limpar</button>
+      <fieldset>
+        <legend>Permissões</legend>
+
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" id="permitir_localizacao" 
+                   name="permitir_localizacao" value="1">
+            <i class="fa fa-location-arrow"></i> 
+            Permitir acesso à minha localização
+            <small>Para encontrar os supermercados mais próximos</small>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Termos de Uso</legend>
+
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" id="aceiteTermos" 
+                   name="aceiteTermos" required>
+            Li e aceito os 
+            <a href="termos.html" target="_blank">termos de uso</a> 
+            e 
+            <a href="privacidade.html" target="_blank">política de privacidade</a>.
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="button-group">
+        <button type="submit" class="btn-primary">
+          <i class="fa fa-check"></i> Criar Conta
+        </button>
+        <button type="reset" class="btn-secondary">
+          <i class="fa fa-refresh"></i> Limpar
+        </button>
+      </div>
+
+      <div class="login-link">
+        Já tem uma conta? <a href="login.html">Fazer login</a>
       </div>
     </form>
   </div>
 
   <footer class="rodape">
-   
+    <p>&copy; 2025 ARCA - Compare preços e economize em Mogi Mirim</p>
   </footer>
 
   <script src="../js/cadastro.js"></script>
-  <script>
-    function toggleSenha() {
-  const campoSenha = document.getElementById('senha');
-  campoSenha.type = campoSenha.type === 'password' ? 'text' : 'password';
-}
-
-function toggleConfirmSenha() {
-  const campoConfirm = document.getElementById('confirmSenha');
-  campoConfirm.type = campoConfirm.type === 'password' ? 'text' : 'password';
-}
-
-  </script>
+ 
 </body>
 </html>
